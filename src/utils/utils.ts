@@ -22,3 +22,15 @@ export const waitUpdate = (delay: number): Promise<void> => {
     setTimeout(() => resolve(), delay);
   });
 };
+
+export const getFib = (num: number) => {
+  const fibArr = [1, 1];
+  const fibResult = [[1], [1, 1]];
+
+  for (let i = 1; i < num; i++) {
+    fibArr.push(fibArr[i - 1] + fibArr[i]);
+    fibResult.push([...fibArr]);
+  }
+
+  return fibResult;
+};

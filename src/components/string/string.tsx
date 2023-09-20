@@ -17,7 +17,7 @@ export const StringComponent: React.FC = () => {
   >([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const sort = async () => {
+  const onSort = async () => {
     setLoading(true);
     for (
       let start = 0, end = reversedInput.length - 1;
@@ -70,7 +70,7 @@ export const StringComponent: React.FC = () => {
   const buttons = [
     {
       text: ButtonsTypes.Reverse,
-      onClick: sort,
+      onClick: onSort,
       loader: loading,
       disabled: input === "",
     },
