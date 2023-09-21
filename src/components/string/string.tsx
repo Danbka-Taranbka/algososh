@@ -1,14 +1,19 @@
 import React from "react";
-import { SolutionLayout } from "../ui/solution-layout/solution-layout";
+import { useState, ChangeEvent } from "react";
 import styles from "./string.module.css";
-import { useState } from "react";
-import { ChangeEvent } from "react";
+
+import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { Circle } from "../ui/circle/circle";
+
 import { ElementStates } from "../../types/element-states";
-import { waitUpdate } from "../../utils/utils";
 import { ButtonsTypes } from "../../types/buttons";
-import { DELAY_IN_MS } from "../../constants/delays";
+
+import { waitUpdate } from "../../utils/utils";
+
 import { TaskInput } from "../task-input/task-input";
+
+import { DELAY_IN_MS } from "../../constants/delays";
+
 
 export const StringComponent: React.FC = () => {
   const [input, setInput] = useState<string>("");

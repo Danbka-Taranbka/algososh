@@ -1,3 +1,5 @@
+import { ElementStates } from "../types/element-states";
+
 function getRandomNum(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -33,4 +35,14 @@ export const getFib = (num: number) => {
   }
 
   return fibResult;
+};
+
+export const swap = (
+  arr: { value: number; status: ElementStates }[],
+  firstIndex: number,
+  secondIndex: number
+): void => {
+  const temp = arr[firstIndex];
+  arr[firstIndex] = arr[secondIndex];
+  arr[secondIndex] = temp;
 };
