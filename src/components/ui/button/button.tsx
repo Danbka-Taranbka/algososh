@@ -4,7 +4,7 @@ import { AscendingIcon } from "../icons/ascending-icon";
 import { DescendingIcon } from "../icons/descending-icon";
 import { Direction } from "../../../types/direction";
 
-const loaderIcon = require("../../../images/icons/loader.svg") as string;
+import loaderIcon from "../../../images/icons/loader.svg";
 
 interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   text?: string;
