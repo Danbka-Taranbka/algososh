@@ -1106,7 +1106,7 @@
   resolved "http://npm.prakticum-team.ru/@babel/regjsgen/-/regjsgen-0.8.0.tgz"
   integrity sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.20.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.20.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.22.15"
   resolved "http://npm.prakticum-team.ru/@babel/runtime/-/runtime-7.22.15.tgz"
   integrity sha512-T0O+aa+4w0u06iNmapipJXMV4HoUir03hpx3/YqXXhu9xim3w+dVphjFWl1OH8NbZHw5Lbm9k45drDkgq2VNNA==
@@ -1802,21 +1802,7 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@testing-library/dom@^8.0.0":
-  version "8.20.1"
-  resolved "http://npm.prakticum-team.ru/@testing-library/dom/-/dom-8.20.1.tgz"
-  integrity sha512-/DiOQ5xBxgdYRC8LNk7U+RWat0S3qRLeIw3ZIkMQ9kkVlRmwD/Eg8k8CqIpD6GW7u20JIUOfMKbxtiLutpjQ4g==
-  dependencies:
-    "@babel/code-frame" "^7.10.4"
-    "@babel/runtime" "^7.12.5"
-    "@types/aria-query" "^5.0.1"
-    aria-query "5.1.3"
-    chalk "^4.1.0"
-    dom-accessibility-api "^0.5.9"
-    lz-string "^1.5.0"
-    pretty-format "^27.0.2"
-
-"@testing-library/dom@>=7.21.4":
+"@testing-library/dom@^9.0.0", "@testing-library/dom@>=7.21.4":
   version "9.3.3"
   resolved "http://npm.prakticum-team.ru/@testing-library/dom/-/dom-9.3.3.tgz"
   integrity sha512-fB0R+fa3AUqbLHWyxXa2kGVtf1Fe1ZZFr0Zp6AIbIAzXb2mKbEXl+PCQNUOaq5lbTab5tfctfXRNsWXxa2f7Aw==
@@ -1845,14 +1831,14 @@
     lodash "^4.17.15"
     redent "^3.0.0"
 
-"@testing-library/react@^12.1.2":
-  version "12.1.5"
-  resolved "http://npm.prakticum-team.ru/@testing-library/react/-/react-12.1.5.tgz"
-  integrity sha512-OfTXCJUFgjd/digLUuPxa0+/3ZxsQmE7ub9kcbW/wi96Bh3o/p5vrETcBGfP17NWPGqeYYl5LTRpwyGoMC4ysg==
+"@testing-library/react@^14.0.0":
+  version "14.0.0"
+  resolved "http://npm.prakticum-team.ru/@testing-library/react/-/react-14.0.0.tgz"
+  integrity sha512-S04gSNJbYE30TlIMLTzv6QCTzt9AqIF5y6s6SzVFILNcNvbV/jU96GeiTPillGQo+Ny64M/5PV7klNYYgv5Dfg==
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@testing-library/dom" "^8.0.0"
-    "@types/react-dom" "<18.0.0"
+    "@testing-library/dom" "^9.0.0"
+    "@types/react-dom" "^18.0.0"
 
 "@testing-library/user-event@^13.5.0":
   version "13.5.0"
@@ -2091,12 +2077,19 @@
   resolved "http://npm.prakticum-team.ru/@types/range-parser/-/range-parser-1.2.4.tgz"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react-dom@^17.0.11", "@types/react-dom@<18.0.0":
+"@types/react-dom@^17.0.11":
   version "17.0.20"
   resolved "http://npm.prakticum-team.ru/@types/react-dom/-/react-dom-17.0.20.tgz"
   integrity sha512-4pzIjSxDueZZ90F52mU3aPoogkHIoSIDG+oQ+wQK7Cy2B9S+MvOqY0uEA/qawKz381qrEDkvpwyt8Bm31I8sbA==
   dependencies:
     "@types/react" "^17"
+
+"@types/react-dom@^18.0.0":
+  version "18.2.8"
+  resolved "http://npm.prakticum-team.ru/@types/react-dom/-/react-dom-18.2.8.tgz"
+  integrity sha512-bAIvO5lN/U8sPGvs1Xm61rlRHHaq5rp5N3kp9C+NJ/Q41P8iqjkXSu0+/qu8POsjH9pNWb0OYabFez7taP7omw==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-router-dom@^5.3.3":
   version "5.3.3"
@@ -2214,9 +2207,9 @@
     "@types/yargs-parser" "*"
 
 "@types/yargs@^17.0.8":
-  version "17.0.24"
-  resolved "http://npm.prakticum-team.ru/@types/yargs/-/yargs-17.0.24.tgz"
-  integrity sha512-6i0aC7jV6QzQB8ne1joVZ0eSFIstHsCrobmOtghM11yGlH0j43FKL2UhWdELkyps0zuf7qVTUVCCR+tgSlyLLw==
+  version "17.0.26"
+  resolved "http://npm.prakticum-team.ru/@types/yargs/-/yargs-17.0.26.tgz"
+  integrity sha512-Y3vDy2X6zw/ZCumcwLpdhM5L7jmyGpmBCTYMHDLqT2IKVMYRRLdv6ZakA+wxhra6Z/3bwhNbNl9bDGXaFU+6rw==
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -3395,7 +3388,7 @@ core-js-pure@^3.23.3:
   resolved "http://npm.prakticum-team.ru/core-js-pure/-/core-js-pure-3.32.2.tgz"
   integrity sha512-Y2rxThOuNywTjnX/PgA5vWM6CZ9QB9sz9oGeCixV8MqXZO70z/5SHzf9EeBrEBK0PN36DnEBBu9O/aGWzKuMZQ==
 
-core-js@^3.19.2:
+core-js@^3.0.0, core-js@^3.19.2:
   version "3.32.2"
   resolved "http://npm.prakticum-team.ru/core-js/-/core-js-3.32.2.tgz"
   integrity sha512-pxXSw1mYZPDGvTQqEc5vgIb83jGQKFGYWY76z4a7weZXUolw3G+OvpZqSRcfYOoOVUQJYEPsWeQK8pKEnUtWxQ==
@@ -4586,6 +4579,22 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
+fetch-mock@^9.11.0:
+  version "9.11.0"
+  resolved "http://npm.prakticum-team.ru/fetch-mock/-/fetch-mock-9.11.0.tgz"
+  integrity sha512-PG1XUv+x7iag5p/iNHD4/jdpxL9FtVSqRMUQhPab4hVDt80T1MH5ehzVrL2IdXO9Q2iBggArFvPqjUbHFuI58Q==
+  dependencies:
+    "@babel/core" "^7.0.0"
+    "@babel/runtime" "^7.0.0"
+    core-js "^3.0.0"
+    debug "^4.1.1"
+    glob-to-regexp "^0.4.0"
+    is-subset "^0.1.1"
+    lodash.isequal "^4.5.0"
+    path-to-regexp "^2.2.1"
+    querystring "^0.2.0"
+    whatwg-url "^6.5.0"
+
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "http://npm.prakticum-team.ru/file-entry-cache/-/file-entry-cache-6.0.1.tgz"
@@ -4865,7 +4874,7 @@ glob-parent@~5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
-glob-to-regexp@^0.4.1:
+glob-to-regexp@^0.4.0, glob-to-regexp@^0.4.1:
   version "0.4.1"
   resolved "http://npm.prakticum-team.ru/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz"
   integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
@@ -5493,6 +5502,11 @@ is-string@^1.0.5, is-string@^1.0.7:
   dependencies:
     has-tostringtag "^1.0.0"
 
+is-subset@^0.1.1:
+  version "0.1.1"
+  resolved "http://npm.prakticum-team.ru/is-subset/-/is-subset-0.1.1.tgz"
+  integrity sha512-6Ybun0IkarhmEqxXCNw/C0bna6Zb/TkfUX9UbwJtK6ObwAVCxmAP308WWTHviM/zAqXk05cdhYsUsZeGQh99iw==
+
 is-symbol@^1.0.2, is-symbol@^1.0.3:
   version "1.0.4"
   resolved "http://npm.prakticum-team.ru/is-symbol/-/is-symbol-1.0.4.tgz"
@@ -6095,7 +6109,7 @@ jest-worker@^28.0.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-"jest@^27.0.0 || ^28.0.0", jest@^27.4.3:
+"jest@^27.0.0 || ^28.0.0", jest@^27.4.3, jest@^27.5.1:
   version "27.5.1"
   resolved "http://npm.prakticum-team.ru/jest/-/jest-27.5.1.tgz"
   integrity sha512-Yn0mADZB89zTtjkPJEXwrac3LHudkQMR+Paqa8uxJHCBr9agxztUifWCyiYrjhMPBoUVBjyny0I7XH6ozDr7QQ==
@@ -6365,6 +6379,16 @@ lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "http://npm.prakticum-team.ru/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "http://npm.prakticum-team.ru/lodash.isequal/-/lodash.isequal-4.5.0.tgz"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "http://npm.prakticum-team.ru/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz"
+  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -6975,6 +6999,11 @@ path-to-regexp@^1.7.0:
   integrity sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==
   dependencies:
     isarray "0.0.1"
+
+path-to-regexp@^2.2.1:
+  version "2.4.0"
+  resolved "http://npm.prakticum-team.ru/path-to-regexp/-/path-to-regexp-2.4.0.tgz"
+  integrity sha512-G6zHoVqC6GGTQkZwF4lkuEyMbVOjoBKAEybQUypI1WTkqinCOrq2x6U2+phkJ1XsEMTy4LjtwPI7HW+NVrRR2w==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -7683,6 +7712,11 @@ qs@6.11.0:
   dependencies:
     side-channel "^1.0.4"
 
+querystring@^0.2.0:
+  version "0.2.1"
+  resolved "http://npm.prakticum-team.ru/querystring/-/querystring-0.2.1.tgz"
+  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
+
 querystringify@^2.1.1:
   version "2.2.0"
   resolved "http://npm.prakticum-team.ru/querystringify/-/querystringify-2.2.0.tgz"
@@ -7764,14 +7798,13 @@ react-dev-utils@^12.0.1:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-react-dom@^17.0.2, react-dom@<18.0.0, "react-dom@>= 16.8.0 || 18.0.0":
-  version "17.0.2"
-  resolved "http://npm.prakticum-team.ru/react-dom/-/react-dom-17.0.2.tgz"
-  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+react-dom@^18.0.0, "react-dom@>= 16.8.0 || 18.0.0":
+  version "18.2.0"
+  resolved "http://npm.prakticum-team.ru/react-dom/-/react-dom-18.2.0.tgz"
+  integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
   dependencies:
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    scheduler "^0.20.2"
+    scheduler "^0.23.0"
 
 react-error-overlay@^6.0.11:
   version "6.0.11"
@@ -7782,6 +7815,11 @@ react-fast-marquee@^1.3.1:
   version "1.6.0"
   resolved "http://npm.prakticum-team.ru/react-fast-marquee/-/react-fast-marquee-1.6.0.tgz"
   integrity sha512-jtuwT9SNjrqxnE7lGZ8mTL1I8Q4+9G4aBta2p+y2Pa3SjR17QROblwrLICyM8rbjQFHgHawTHcaH9HvoVO2NOA==
+
+"react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^17.0.1:
+  version "17.0.2"
+  resolved "http://npm.prakticum-team.ru/react-is/-/react-is-17.0.2.tgz"
+  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
 react-is@^16.13.1:
   version "16.13.1"
@@ -7798,12 +7836,12 @@ react-is@^16.7.0:
   resolved "http://npm.prakticum-team.ru/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-is@^17.0.1:
-  version "17.0.2"
-  resolved "http://npm.prakticum-team.ru/react-is/-/react-is-17.0.2.tgz"
-  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
-
 react-is@^18.0.0:
+  version "18.2.0"
+  resolved "http://npm.prakticum-team.ru/react-is/-/react-is-18.2.0.tgz"
+  integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-is@^18.2.0:
   version "18.2.0"
   resolved "http://npm.prakticum-team.ru/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
@@ -7896,13 +7934,29 @@ react-scripts@^5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react@^17.0.2, react@<18.0.0, "react@>= 16", "react@>= 16.8.0 || 18.0.0", react@>=15, react@17.0.2:
-  version "17.0.2"
-  resolved "http://npm.prakticum-team.ru/react/-/react-17.0.2.tgz"
-  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+react-shallow-renderer@^16.15.0:
+  version "16.15.0"
+  resolved "http://npm.prakticum-team.ru/react-shallow-renderer/-/react-shallow-renderer-16.15.0.tgz"
+  integrity sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==
+  dependencies:
+    object-assign "^4.1.1"
+    react-is "^16.12.0 || ^17.0.0 || ^18.0.0"
+
+react-test-renderer@^18.2.0:
+  version "18.2.0"
+  resolved "http://npm.prakticum-team.ru/react-test-renderer/-/react-test-renderer-18.2.0.tgz"
+  integrity sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==
+  dependencies:
+    react-is "^18.2.0"
+    react-shallow-renderer "^16.15.0"
+    scheduler "^0.23.0"
+
+"react@^16.0.0 || ^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 18.0.0", react@>=15:
+  version "18.2.0"
+  resolved "http://npm.prakticum-team.ru/react/-/react-18.2.0.tgz"
+  integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -7954,6 +8008,13 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
+
+redux-mock-store@^1.5.4:
+  version "1.5.4"
+  resolved "http://npm.prakticum-team.ru/redux-mock-store/-/redux-mock-store-1.5.4.tgz"
+  integrity sha512-xmcA0O/tjCLXhh9Fuiq6pMrJCwFRaouA8436zcikdIpYWWCjU76CRk+i2bHx8EeiSiMGnB85/lZdU3wIJVXHTA==
+  dependencies:
+    lodash.isplainobject "^4.0.6"
 
 reflect.getprototypeof@^1.0.4:
   version "1.0.4"
@@ -8221,13 +8282,12 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-scheduler@^0.20.2:
-  version "0.20.2"
-  resolved "http://npm.prakticum-team.ru/scheduler/-/scheduler-0.20.2.tgz"
-  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
+scheduler@^0.23.0:
+  version "0.23.0"
+  resolved "http://npm.prakticum-team.ru/scheduler/-/scheduler-0.23.0.tgz"
+  integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
   dependencies:
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 schema-utils@^2.6.5:
   version "2.7.1"
@@ -9464,6 +9524,15 @@ whatwg-mimetype@^2.3.0:
   version "2.3.0"
   resolved "http://npm.prakticum-team.ru/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz"
   integrity sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==
+
+whatwg-url@^6.5.0:
+  version "6.5.0"
+  resolved "http://npm.prakticum-team.ru/whatwg-url/-/whatwg-url-6.5.0.tgz"
+  integrity sha512-rhRZRqx/TLJQWUpQ6bmrt2UV4f0HCQ463yQuONJqC6fO2VoEb1pTYddbe59SkYq87aoM5A3bdhMZiUiVws+fzQ==
+  dependencies:
+    lodash.sortby "^4.7.0"
+    tr46 "^1.0.1"
+    webidl-conversions "^4.0.2"
 
 whatwg-url@^7.0.0:
   version "7.1.0"
