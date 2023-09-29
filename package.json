@@ -22,13 +22,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:open": "D:/Учёба/dev/algososh/node_modules/.bin/cypress open",
+    "cypress:open": "start-server-and-test start http://localhost:3000 cypress",
     "cypress": "npx cypress open"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
