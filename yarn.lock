@@ -2150,6 +2150,13 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
+"@types/react-test-renderer@^18.0.3":
+  version "18.0.3"
+  resolved "http://npm.prakticum-team.ru/@types/react-test-renderer/-/react-test-renderer-18.0.3.tgz"
+  integrity sha512-4wcNLnY6nIT+L6g94CpzL4CXX2P18JvKPU9CDlaHr3DnbP3GiaQLhDotJqjWlVqOcE4UhLRjp0MtxqwuNKONnA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^17", "@types/react@^17.0.39":
   version "17.0.65"
   resolved "http://npm.prakticum-team.ru/@types/react/-/react-17.0.65.tgz"
