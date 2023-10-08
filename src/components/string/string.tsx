@@ -83,7 +83,7 @@ export const StringComponent: React.FC = () => {
 
   return (
     <SolutionLayout title="Строка">
-      <div className={styles.container}>
+      <div className={styles.container} data-testid="recursion-page">
         <TaskInput
           value={input}
           name="input"

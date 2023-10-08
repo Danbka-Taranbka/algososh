@@ -265,7 +265,7 @@ export const ListPage: React.FC = () => {
 
   return (
     <SolutionLayout title="Связный список">
-      <div className={styles.menu}>
+      <div className={styles.menu} data-testid="list-page">
         <TaskInput
           buttons={buttonsTop}
           isLimitText={true}
