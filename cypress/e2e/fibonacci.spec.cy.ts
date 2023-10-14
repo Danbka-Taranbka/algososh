@@ -17,7 +17,7 @@ function checkDigit (index:  number, digit: number) {
     .should("have.css", "border", "3.63636px solid rgb(0, 50, 255)");
 }
 
-describe('Recursion algorithm', function() {
+describe('Fibonacci', function() {
 
   beforeEach(function() {
     cy.visit('http://localhost:3000/fibonacci');
