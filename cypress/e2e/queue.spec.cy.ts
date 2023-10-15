@@ -1,32 +1,28 @@
 import { ButtonsTypes } from "../../src/types/buttons";
-
-const blue = "3.63636px solid rgb(0, 50, 255)";
-const purple = "3.63636px solid rgb(210, 82, 225)";
+import {blue, purple } from "../../src/constants/border-colors";
+import { circleTestId, headTestId, indexTestId, tailTestId } from "../../src/constants/test-ids";
 
 function checkDigit (index:  number, digit: number | '', color: string, head?: boolean, tail?: boolean) {
   cy.get('li').eq(index).as('element');
 
   cy.get('@element')
-  .find('[data-testid="circle"]')
-  .should("have.css", "border", color);
-  
-  cy.get('@element')
-    .find('[data-testid="circle-text"]')
-    .should('have.text', digit);
+  .find(circleTestId)
+  .should("have.css", "border", color)
+  .and('have.text', digit);
 
   cy.get('@element')
-    .find('[data-testid="index"]')
+    .find(indexTestId)
     .should('have.text', index);
 
   if (head) {
     cy.get('@element')
-      .find('[data-testid="head"]')
+      .find(headTestId)
       .should('have.text', 'head');
   }
 
   if (tail) {
     cy.get('@element')
-      .find('[data-testid="tail"]')
+      .find(tailTestId)
       .should('have.text', 'tail');
   }
 }
