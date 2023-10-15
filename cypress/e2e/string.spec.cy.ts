@@ -1,14 +1,12 @@
 import { ButtonsTypes } from "../../src/types/buttons";
-
-const blue = "3.63636px solid rgb(0, 50, 255)";
-const purple = "3.63636px solid rgb(210, 82, 225)";
-const green = "3.63636px solid rgb(127, 224, 81)";
+import {blue, purple, green} from "../../src/constants/border-colors";
+import { circleTestId } from "../../src/constants/test-ids";
 
 function checkLetter (index:  number, letter: string, circleColor: string) {
   cy.get('li')
   .eq(index)
   .should('have.text', letter)
-  .find('[data-testid="circle"]')
+  .find(circleTestId)
   .should("have.css", "border", circleColor);
 }
 
