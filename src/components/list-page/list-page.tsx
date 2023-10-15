@@ -33,7 +33,7 @@ export const ListPage: React.FC = () => {
 
   const listRef = useRef(
     new List<Wrapper<string>>(
-      Wrapper.prototype.fromArray(["12", "13", "14", "15"])
+      Wrapper.prototype.fromArray(["3", "4", "5", "6"])
     )
   );
   const [list, setList] = useState<Wrapper<string>[]>([]);
@@ -172,7 +172,7 @@ export const ListPage: React.FC = () => {
     newElement.status = ElementStates.Default;
     setList(listRef.current.toArray());
     setValues((prevState) => {
-      return { ...prevState, inputValue: "" };
+      return { ...prevState, inputValue: "", inputIndex: "" };
     });
     setLoading("");
   };
@@ -206,7 +206,7 @@ export const ListPage: React.FC = () => {
     }
     setList(listRef.current.toArray());
     setValues((prevState) => {
-      return { ...prevState, inputValue: "" };
+      return { ...prevState, inputValue: "", inputIndex: "" };
     });
     setLoading("");
   };
