@@ -1,20 +1,19 @@
 import { ButtonsTypes } from "../../src/types/buttons";
+import { blue } from "../../src/constants/border-colors";
+import { circleTestId, tailTestId } from "../../src/constants/test-ids";
 
 
 function checkDigit (index:  number, digit: number) {
   cy.get('li').eq(index).as('element');
-  
-  cy.get('@element')
-    .find('[data-testid="circle-text"]')
-    .should('have.text', digit);
 
   cy.get('@element')
-    .find('[data-testid="tail"]')
+    .find(tailTestId)
     .should('have.text', index);
   
   cy.get('@element')
-    .find('[data-testid="circle"]')
-    .should("have.css", "border", "3.63636px solid rgb(0, 50, 255)");
+    .find(circleTestId)
+    .should("have.css", "border", blue)
+    .and('have.text', digit);
 }
 
 describe('Fibonacci', function() {
