@@ -1,26 +1,22 @@
 import { ButtonsTypes } from "../../src/types/buttons";
-
-const blue = "3.63636px solid rgb(0, 50, 255)";
-const purple = "3.63636px solid rgb(210, 82, 225)";
+import {blue, purple } from "../../src/constants/border-colors";
+import { circleTestId, headTestId, tailTestId } from "../../src/constants/test-ids";
 
 function checkDigit (index:  number, digit: number, color: string, top?: true) {
   cy.get('li').eq(index).as('element');
-  
-  cy.get('@element')
-    .find('[data-testid="circle-text"]')
-    .should('have.text', digit);
 
   cy.get('@element')
-    .find('[data-testid="tail"]')
+    .find(tailTestId)
     .should('have.text', index);
   
   cy.get('@element')
-    .find('[data-testid="circle"]')
-    .should("have.css", "border", color);
+    .find(circleTestId)
+    .should("have.css", "border", color)
+    .and("have.text", digit)
 
   if (top) {
     cy.get('@element')
-      .find('[data-testid="head"]')
+      .find(headTestId)
       .should('have.text', 'top');
   }
 }
@@ -102,6 +98,7 @@ describe('Stack', function() {
     checkDigit(0, 1, blue);
     checkDigit(1, 3, purple, true);
     cy.tick(500);
+    checkDigit(0, 1, blue);
     checkDigit(1, 3, blue, true);
     cy.get('@input').type('7');
     cy.tick(500);
@@ -110,6 +107,8 @@ describe('Stack', function() {
     checkDigit(1, 3, blue);
     checkDigit(2, 7, purple, true);
     cy.tick(500);
+    checkDigit(0, 1, blue);
+    checkDigit(1, 3, blue);
     checkDigit(2, 7, blue, true);
     cy.tick(500);
     cy.get('@deleteButton').click();
