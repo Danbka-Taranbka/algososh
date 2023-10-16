@@ -14,11 +14,12 @@ import { Direction } from "../../types/direction";
 import { createRandomArr, waitUpdate, swap } from "../../utils/utils";
 
 import { DELAY_IN_MS } from "../../constants/delays";
+import { sortSelection } from "./sort-selection";
 
 export const SortingPage: React.FC = () => {
   const [filter, setFilter] =
     useState<string>("selectionSort");
-  const [arr, setArr] = useState<{ value: number; status: ElementStates }[]>(
+  const [arr, setArr] = useState<{ value: number, status: ElementStates }[]>(
     []
   );
   const [loading, setLoading] = useState<string>("");
@@ -43,72 +44,10 @@ export const SortingPage: React.FC = () => {
   const changeSortingDirection = (event: MouseEvent<HTMLButtonElement>) => {
     setLoading(event.currentTarget.innerText);
     if (filter === "selectionSort") {
-      sortSelection(event.currentTarget.value);
+      sortSelection(setArr, setLoading, arr, event.currentTarget.value);
     } else {
       sortBubble(event.currentTarget.value);
     }
-  };
-
-  const sortSelection = async (sortinDirection: string) => {
-    for (let i = 0; i <= arr.length; i++) {
-      await waitUpdate(DELAY_IN_MS);
-      setArr((prevState) => {
-        return prevState.map((item, index) => {
-          if (index < i) {
-            return { ...item, status: ElementStates.Modified };
-          } else if (index === Number(i)) {
-            return { ...item, status: ElementStates.Changing };
-          } else {
-            return item;
-          }
-        });
-      });
-
-      for (let j = i + 1; j < arr.length; j++) {
-        await waitUpdate(DELAY_IN_MS);
-        setArr((prevState) => {
-          return prevState.map((item, index) => {
-            if (index === j) {
-              return { ...item, status: ElementStates.Changing };
-            } else if (index > i && index < j) {
-              return { ...item, status: ElementStates.Default };
-            } else {
-              return item;
-            }
-          });
-        });
-        await waitUpdate(DELAY_IN_MS);
-
-        setArr((prevstate) => {
-          if (
-            (sortinDirection === Direction.Ascending &&
-              prevstate[i].value > prevstate[j].value) ||
-            (sortinDirection === Direction.Descending &&
-              prevstate[i].value < prevstate[j].value)
-          ) {
-            swap(prevstate, i, j);
-            return prevstate.map((item, index) => {
-              if (index === i) {
-                return { ...item, status: ElementStates.Modified };
-              } else if (index === j) {
-                return { ...item, status: ElementStates.Default };
-              } else {
-                return item;
-              }
-            });
-          } else {
-            return prevstate.map((item, index) => {
-              if (index === prevstate.length - 1) {
-                return { ...item, status: ElementStates.Default };
-              } else {
-                return item;
-              }
-            });
-          }
-        });
-      }
-    }
-    setLoading("");
   };
 
   const sortBubble = async (sortinDirection: string) => {
