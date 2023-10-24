@@ -72,7 +72,7 @@ export const StackPage: React.FC = () => {
 
   return (
     <SolutionLayout title="Стек">
-      <div className={styles.menu}>
+      <div className={styles.menu} data-testid="stack-page">
         <TaskInput
           value={values.input}
           onInput={handleChange}

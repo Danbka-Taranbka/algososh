@@ -1,3 +1,4 @@
+import { DELAY_IN_MS } from "../constants/delays";
 import { ElementStates } from "../types/element-states";
 
 function getRandomNum(min: number, max: number) {
@@ -38,11 +39,34 @@ export const getFib = (num: number) => {
 };
 
 export const swap = (
-  arr: { value: number; status: ElementStates }[],
+  arr: { value: string | number, status: ElementStates }[],
   firstIndex: number,
   secondIndex: number
 ): void => {
   const temp = arr[firstIndex];
   arr[firstIndex] = arr[secondIndex];
   arr[secondIndex] = temp;
+};
+
+export const reverse = async (
+  reversedInput: { status: ElementStates, value: string }[],
+  setReversedInput: React.Dispatch<React.SetStateAction<{ status: ElementStates, value: string }[]>>
+  ) => {
+  for (
+    let start = 0, end = reversedInput.length - 1;
+    start <= end;
+    start++, end--
+  ) {
+    await waitUpdate(DELAY_IN_MS);
+
+    reversedInput[start].status = ElementStates.Changing;
+    reversedInput[end].status = ElementStates.Changing;
+    setReversedInput([...reversedInput]);
+    await waitUpdate(DELAY_IN_MS);
+    swap(reversedInput, start, end);
+    reversedInput[start].status = ElementStates.Modified;
+    reversedInput[end].status = ElementStates.Modified;
+    setReversedInput([...reversedInput]);
+  }
+  return reversedInput;
 };

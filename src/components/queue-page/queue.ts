@@ -31,6 +31,8 @@ export class Queue<T> implements IQueue<T> {
     this.length--;
     if (!this.isEmpty) {
       this.head++;
+    } else {
+      this.clear();
     }
   };
 
@@ -38,6 +40,7 @@ export class Queue<T> implements IQueue<T> {
     this.container = Array.from({ length: this.size });
     this.head = 0;
     this.tail = 0;
+    this.length = 0;
   };
 
   get elements() {
