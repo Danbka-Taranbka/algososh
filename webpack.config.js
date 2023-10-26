@@ -1,9 +1,11 @@
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.tsx'),
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -20,18 +22,18 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
+              url: true
             },
           },
         ],
       },
       {
-        test: /\.(jpg|png|svg)$/,
-        use: {
-          loader: 'url-loader',
-        },
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2)$/,
+        exclude: /node_modules/,
         type: 'asset/resource',
       },
       {
@@ -51,7 +53,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, './dist'),
     compress: true,
-    port: 3000,
+    port: 4000,
         // сообщим dev-серверу, что в проекте используется hmr
   },
   plugins: [
@@ -60,6 +62,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.join('./public/index.html')
-  })
+  }),
+  new CleanWebpackPlugin(),
+  new MiniCssExtractPlugin(),
   ],
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+}
 };
