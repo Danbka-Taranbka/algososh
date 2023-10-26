@@ -1,6 +1,7 @@
 {
   "name": "algorithms-project",
   "version": "0.1.0",
+  "home-page": "https://github.com/Danbka-Taranbka/algososh.git",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -25,7 +26,8 @@
     "eject": "react-scripts eject",
     "cypress:open": "npx cypress open",
     "webpack:build": "webpack --mode production",
-    "webpack:serve": "webpack serve --mode production"
+    "webpack:serve": "webpack serve --mode production",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +64,7 @@
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-webpack-plugin": "^4.0.1",
     "fetch-mock": "^9.11.0",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^27.5.1",
     "mini-css-extract-plugin": "^2.7.6",
