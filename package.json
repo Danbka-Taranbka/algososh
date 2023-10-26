@@ -1,8 +1,8 @@
 {
   "name": "algorithms-project",
   "version": "0.1.0",
-  "home-page": "https://danbka-taranbka.github.io/algososh/",
-  "private": true,
+  "homepage": "https://danbka-taranbka.github.io/algososh/",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/user-event": "^13.5.0",
