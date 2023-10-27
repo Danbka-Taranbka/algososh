@@ -1,61 +1,28 @@
 import React from "react";
-import { SolutionLayout } from "../ui/solution-layout/solution-layout";
+import { useState, ChangeEvent } from "react";
 import styles from "./string.module.css";
-import { useState } from "react";
-import { ChangeEvent } from "react";
+
+import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { Circle } from "../ui/circle/circle";
+
 import { ElementStates } from "../../types/element-states";
-import { waitUpdate } from "../../utils/utils";
 import { ButtonsTypes } from "../../types/buttons";
-import { DELAY_IN_MS } from "../../constants/delays";
+
+import { reverse } from "../../utils/utils";
+
 import { TaskInput } from "../task-input/task-input";
+
 
 export const StringComponent: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [reversedInput, setReversedInput] = useState<
-    { status: ElementStates; value: string }[]
+    { status: ElementStates, value: string }[]
   >([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const sort = async () => {
+  const onSort = async () => {
     setLoading(true);
-    for (
-      let start = 0, end = reversedInput.length - 1;
-      start <= end;
-      start++, end--
-    ) {
-      await waitUpdate(DELAY_IN_MS);
-
-      setReversedInput((prevState) => {
-        return prevState.map((item, index) => {
-          if (index === start) {
-            return { ...item, status: ElementStates.Changing };
-          } else if (index === end) {
-            return { ...item, status: ElementStates.Changing };
-          } else {
-            return item;
-          }
-        });
-      });
-      await waitUpdate(DELAY_IN_MS);
-
-      setReversedInput((prevState) => {
-        let newState = [...prevState];
-        if (newState[start] && newState[end]) {
-          const temp = newState[start];
-          newState[start] = newState[end];
-          newState[end] = temp;
-        }
-        newState = newState.map((item, index) => {
-          if (item.status === ElementStates.Changing) {
-            return { ...item, status: ElementStates.Modified };
-          } else {
-            return item;
-          }
-        });
-        return newState;
-      });
-    }
+    reverse(reversedInput, setReversedInput);
     setLoading(false);
   };
 
@@ -70,7 +37,7 @@ export const StringComponent: React.FC = () => {
   const buttons = [
     {
       text: ButtonsTypes.Reverse,
-      onClick: sort,
+      onClick: onSort,
       loader: loading,
       disabled: input === "",
     },
@@ -78,7 +45,7 @@ export const StringComponent: React.FC = () => {
 
   return (
     <SolutionLayout title="Строка">
-      <div className={styles.container}>
+      <div className={styles.container} data-testid="recursion-page">
         <TaskInput
           value={input}
           name="input"
